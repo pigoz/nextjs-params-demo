@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "open-demo": "URL='http://localhost:3888/?bounds[]=34.09202489697945&bounds[]=48.38781870443374&foo[]=bar&foo[]=baz&a=1&b=b' && (open $URL || cmd.exe /c start $URL)",
+    "dev": "pnpm run open-demo && next dev -p 3888",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
