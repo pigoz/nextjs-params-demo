@@ -1,15 +1,8 @@
-import {
-  ServerSearchParams,
-  URLSearchParamsFromServerSearchParams,
-  parse,
-} from "@/utils/query-string";
-
-interface PageProps {
-  searchParams: ServerSearchParams;
-}
+import { PageProps, URLSearchParamsFromPageProps } from "@/utils/next";
+import { parse } from "@/utils/query-string";
 
 export default function Home(props: PageProps) {
-  const params = URLSearchParamsFromServerSearchParams(props.searchParams);
+  const params = URLSearchParamsFromPageProps(props);
   const struct = parse(params, { parseNumbers: true });
   return (
     <main>
