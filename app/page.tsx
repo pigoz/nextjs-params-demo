@@ -1,10 +1,15 @@
-"use client";
+import {
+  ServerSearchParams,
+  URLSearchParamsFromServerSearchParams,
+  structFromURLSearchParams,
+} from "@/utils/url";
 
-import { structFromURLSearchParams } from "@/utils/url";
-import { useSearchParams } from "next/navigation";
+interface PageProps {
+  searchParams: ServerSearchParams;
+}
 
-export default function Home() {
-  const params = useSearchParams();
+export default function Home(props: PageProps) {
+  const params = URLSearchParamsFromServerSearchParams(props.searchParams);
   const struct = structFromURLSearchParams(params, { parseNumbers: true });
   return (
     <main>
