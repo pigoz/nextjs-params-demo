@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "open-demo": "URL='http://localhost:3888/?bounds[]=34.09202489697945&bounds[]=48.38781870443374&foo[]=bar&foo[]=baz&a=1&b=b' && (open $URL || cmd.exe /c start $URL)",
+    "open-demo": "URL='http://localhost:3888/?bounds[]=34.09202489697945&bounds[]=48.38781870443374&bounds[]=1&bounds[]=2&foo[]=bar&foo[]=baz&a=1&b=b&ignored=bar' && (open $URL || cmd.exe /c start $URL)",
     "dev": "pnpm run open-demo && next dev -p 3888",
     "build": "next build",
     "start": "next start",
@@ -12,7 +12,9 @@
   "dependencies": {
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.5"
+    "next": "14.2.5",
+    "@effect/schema": "^0.46.1",
+    "effect": "2.0.0-next.52"
   },
   "devDependencies": {
     "typescript": "^5",
