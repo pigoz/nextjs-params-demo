@@ -1,8 +1,8 @@
 import {
   ServerSearchParams,
   URLSearchParamsFromServerSearchParams,
-  structFromURLSearchParams,
-} from "@/utils/url";
+  parse,
+} from "@/utils/query-string";
 
 interface PageProps {
   searchParams: ServerSearchParams;
@@ -10,7 +10,7 @@ interface PageProps {
 
 export default function Home(props: PageProps) {
   const params = URLSearchParamsFromServerSearchParams(props.searchParams);
-  const struct = structFromURLSearchParams(params, { parseNumbers: true });
+  const struct = parse(params, { parseNumbers: true });
   return (
     <main>
       <pre>{JSON.stringify(struct, null, 2)}</pre>

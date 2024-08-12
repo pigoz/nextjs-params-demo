@@ -11,10 +11,7 @@ export function URLSearchParamsFromServerSearchParams(
   return new URLSearchParams(entries);
 }
 
-export function structFromURLSearchParams(
-  usp: URLSearchParams,
-  options?: { parseNumbers?: true },
-) {
+export function parse(usp: URLSearchParams, options?: { parseNumbers?: true }) {
   type TypeOrArray<T> = T | T[];
   const params: Record<string, TypeOrArray<string | number | null>> = {};
 
